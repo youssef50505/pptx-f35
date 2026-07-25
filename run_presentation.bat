@@ -1,7 +1,5 @@
 @echo off
 echo Starting Presentation Server...
-cd presentation
-
 :: Start the browser and wait 1 second to ensure server is up
 start http://localhost:8000
 
