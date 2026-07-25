@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-35 Lightning II — Interactive Briefing</title>
+    <meta name="description" content="An interactive 3D presentation on the F-35 Lightning II fifth-generation stealth fighter.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="bg-effects" aria-hidden="true">
+        <div class="bg-orb bg-orb--primary"></div>
+        <div class="bg-orb bg-orb--secondary"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">LOADING 3D MODEL…</p>
+    </div>
+
+    <!-- 3D Model Layer -->
+    <div class="model-layer">
+        <model-viewer
+            id="fighter-model"
+            src="f-35a_lightning_ii.glb"
+            alt="3D model of an F-35A Lightning II"
+            camera-controls
+            disable-zoom
+            auto-rotate
+            rotation-per-second="3deg"
+            environment-image="neutral"
+            exposure="0.9"
+            shadow-intensity="0"
+            camera-orbit="45deg 72deg 14m"
+            min-camera-orbit="auto auto auto"
+            max-camera-orbit="auto auto auto"
+            interpolation-decay="120"
+            interaction-prompt="none"
+            loading="eager">
+        </model-viewer>
+    </div>
+
+    <!-- Slide Deck -->
+    <main class="deck" id="deck">
+
+        <!-- SLIDE 1 — Title -->
+        <section class="slide slide--active" id="slide-1" data-orbit="45deg 72deg 14m">
+            <span class="slide__tag">PRESENTATION SKILLS • MILITARY AVIATION BRIEF</span>
+            <h1 class="slide__hero">
+                F-35<br>
+                <span class="slide__hero--accent">LIGHTNING II</span>
+            </h1>
+            <p class="slide__subtitle">The Future of Fighter Aircraft</p>
+            <div class="slide__divider"></div>
+        </section>
+
+        <!-- SLIDE 2 — Overview -->
+        <section class="slide" id="slide-2" data-orbit="120deg 78deg 10m">
+            <span class="slide__tag">OVERVIEW</span>
+            <h2 class="slide__title">What is the F-35 Lightning II?</h2>
+            <p class="slide__body">The F-35 Lightning II is a fifth-generation, multirole stealth fighter developed by Lockheed Martin for the United States and allied nations.</p>
+            <p class="slide__body slide__body--emphasis">"Multirole" means a single airframe can execute many different mission types.</p>
+
+            <div class="info-row">
+                <div class="info-card">
+                    <h4 class="info-card__label">Mission Capabilities</h4>
+                    <ul class="info-card__list">
+                        <li>Air superiority &amp; airspace protection</li>
+                        <li>Precision strike on ground targets</li>
+                        <li>Intelligence, Surveillance &amp; Reconnaissance</li>
+                        <li>Close air support for friendly forces</li>
+                    </ul>
+                </div>
+                <div class="info-card info-card--timeline">
+                    <h4 class="info-card__label">Program Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline__item"><span class="timeline__year">1990s</span><span class="timeline__desc">Joint Strike Fighter program initiated</span></div>
+                        <div class="timeline__item"><span class="timeline__year">2006</span><span class="timeline__desc">First flight of the X-35 demonstrator</span></div>
+                        <div class="timeline__item"><span class="timeline__year">2015</span><span class="timeline__desc">Initial Operating Capability declared</span></div>
+                    </div>
+                </div>
+            </div>
+            <p class="slide__footnote">Operated by the United States and a growing coalition of NATO allies and international partners.</p>
+        </section>
+
+        <!-- SLIDE 3 — Variants -->
+        <section class="slide" id="slide-3" data-orbit="-30deg 65deg 12m">
+            <span class="slide__tag">VARIANTS</span>
+            <h2 class="slide__title">Three Variants of the F-35</h2>
+            <div class="variant-cards">
+                <div class="variant-card">
+                    <div class="variant-card__badge">A</div>
+                    <h3 class="variant-card__name">F-35A</h3>
+                    <p class="variant-card__branch">U.S. Air Force</p>
+                    <ul class="variant-card__specs">
+                        <li>Conventional takeoff and landing (CTOL)</li>
+                        <li>Optimised for operations from standard runways</li>
+                    </ul>
+                </div>
+                <div class="variant-card">
+                    <div class="variant-card__badge">B</div>
+                    <h3 class="variant-card__name">F-35B</h3>
+                    <p class="variant-card__branch">U.S. Marine Corps</p>
+                    <ul class="variant-card__specs">
+                        <li>Short takeoff / vertical landing (STOVL)</li>
+                        <li>Operates from amphibious assault ships</li>
+                    </ul>
+                </div>
+                <div class="variant-card">
+                    <div class="variant-card__badge">C</div>
+                    <h3 class="variant-card__name">F-35C</h3>
+                    <p class="variant-card__branch">U.S. Navy</p>
+                    <ul class="variant-card__specs">
+                        <li>Larger wing area and reinforced landing gear</li>
+                        <li>Carrier-based operations (CV/CATOBAR)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4 — Specifications -->
+        <section class="slide" id="slide-4" data-orbit="200deg 82deg 11m">
+            <span class="slide__tag">SPECIFICATIONS</span>
+            <h2 class="slide__title">Performance &amp; Capabilities</h2>
+            <div class="spec-grid">
+                <div class="spec-tile">
+                    <span class="spec-tile__label">ENGINE</span>
+                    <strong class="spec-tile__value">Pratt &amp; Whitney F135</strong>
+                </div>
+                <div class="spec-tile">
+                    <span class="spec-tile__label">TOP SPEED</span>
+                    <strong class="spec-tile__value">Mach 1.6</strong>
+                </div>
+                <div class="spec-tile">
+                    <span class="spec-tile__label">SERVICE CEILING</span>
+                    <strong class="spec-tile__value">50,000 ft</strong>
+                </div>
+                <div class="spec-tile">
+                    <span class="spec-tile__label">COMBAT RADIUS</span>
+                    <strong class="spec-tile__value">~1,100 km</strong>
+                </div>
+            </div>
+            <div class="legacy-strip">
+                <h4 class="legacy-strip__heading">Combining Legacy Strengths</h4>
+                <div class="legacy-strip__items">
+                    <div class="legacy-strip__item"><strong>F-16</strong> Multirole versatility</div>
+                    <div class="legacy-strip__divider"></div>
+                    <div class="legacy-strip__item"><strong>AV-8B Harrier</strong> STOVL capability</div>
+                    <div class="legacy-strip__divider"></div>
+                    <div class="legacy-strip__item"><strong>B-2 Spirit</strong> Low-observable technology</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5 — Stealth -->
+        <section class="slide" id="slide-5" data-orbit="60deg 68deg 7m">
+            <div class="stealth-glass">
+                <span class="slide__tag">LOW OBSERVABILITY</span>
+                <h2 class="slide__title">Stealth Technology</h2>
+                <p class="slide__body">Low observability is central to the F-35's survivability. The aircraft is engineered to minimise detection across multiple spectra.</p>
+                <ul class="stealth-features">
+                    <li><span class="stealth-features__icon">◆</span> Faceted airframe geometry reduces radar cross-section</li>
+                    <li><span class="stealth-features__icon">◆</span> Radar-absorbent materials (RAM) coat critical surfaces</li>
+                    <li><span class="stealth-features__icon">◆</span> Internal weapons bays eliminate external stores</li>
+                </ul>
+                <div class="radar-callout">
+                    <div class="radar-callout__pulse"></div>
+                    <p><strong>Result:</strong> A drastically reduced radar signature — the F-35 is extremely difficult for adversary systems to detect, track, or engage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6 — Avionics -->
+        <section class="slide" id="slide-6" data-orbit="-100deg 55deg 9m">
+            <span class="slide__tag">AVIONICS</span>
+            <h2 class="slide__title">A Flying Supercomputer</h2>
+            <p class="slide__body">The F-35's mission systems process more data than any fighter in history, giving pilots an unprecedented decision-making advantage.</p>
+            <div class="avionics-grid">
+                <div class="avionics-card">
+                    <h4 class="avionics-card__title">AN/APG-81 AESA Radar</h4>
+                    <p>Simultaneously detects, tracks, and engages air and ground targets at extended range.</p>
+                </div>
+                <div class="avionics-card">
+                    <h4 class="avionics-card__title">AN/AAQ-37 DAS</h4>
+                    <p>Six infrared sensors provide a seamless 360-degree spherical view around the aircraft.</p>
+                </div>
+                <div class="avionics-card">
+                    <h4 class="avionics-card__title">Gen III HMDS</h4>
+                    <p>Helmet-Mounted Display System projects flight data, targeting, and sensor imagery directly onto the visor.</p>
+                </div>
+                <div class="avionics-card">
+                    <h4 class="avionics-card__title">Sensor Fusion Engine</h4>
+                    <p>Correlates data from every onboard and offboard sensor into a single unified tactical picture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7 — Comparison -->
+        <section class="slide" id="slide-7" data-orbit="0deg 88deg 22m">
+            <span class="slide__tag">COMPARISON</span>
+            <h2 class="slide__title">F-35 vs F-22 vs F-16</h2>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>F-35 Lightning II</th>
+                            <th>F-22 Raptor</th>
+                            <th>F-16 Fighting Falcon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="comparison-table__label">Generation</td><td>5th</td><td>5th</td><td>4th</td></tr>
+                        <tr><td class="comparison-table__label">Primary Role</td><td>Multirole Strike</td><td>Air Superiority</td><td>Multirole</td></tr>
+                        <tr><td class="comparison-table__label">Stealth</td><td>Full stealth</td><td>Full stealth</td><td>Reduced RCS only</td></tr>
+                        <tr><td class="comparison-table__label">Top Speed</td><td>Mach 1.6</td><td>Mach 2.25</td><td>Mach 2.0</td></tr>
+                        <tr><td class="comparison-table__label">Sensor Fusion</td><td>Advanced</td><td>Moderate</td><td>Limited</td></tr>
+                        <tr><td class="comparison-table__label">STOVL Variant</td><td>Yes (F-35B)</td><td>No</td><td>No</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SLIDE 8 — Closing -->
+        <section class="slide" id="slide-8" data-orbit="45deg 72deg 16m">
+            <div class="conclusion-glass">
+                <span class="slide__tag">CLOSING</span>
+                <h2 class="slide__title">Conclusion</h2>
+                <p class="slide__body">The F-35 Lightning II represents a generational leap in combat aviation, integrating:</p>
+                <ul class="conclusion-pillars">
+                    <li>Low-observable stealth design</li>
+                    <li>Advanced sensor fusion and networking</li>
+                    <li>Multi-spectrum situational awareness</li>
+                    <li>Interoperability across allied forces</li>
+                </ul>
+                <blockquote class="slide__blockquote">
+                    <p>A point of debate: some analysts express concern that dependence on U.S.-managed software sustainment could constrain an operator's sovereign control. No public evidence of any embedded "kill switch" has been substantiated.</p>
+                </blockquote>
+                <p class="slide__closing">Thank you for your attention.<br>Questions are welcome.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation HUD -->
+    <nav class="nav-hud" aria-label="Slide navigation">
+        <button class="nav-hud__btn" id="prev-btn" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="nav-hud__progress">
+            <div class="nav-hud__bar" id="progress-bar"></div>
+        </div>
+        <span class="nav-hud__counter" id="slide-counter">01 / 08</span>
+        <button class="nav-hud__btn" id="next-btn" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+    </nav>
+
+    <!-- Persistent Footer -->
+    <footer class="persistent-footer" aria-hidden="true">
+        <span>F-35 LIGHTNING II</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
